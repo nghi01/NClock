@@ -6,8 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.text.*;
 import java.util.*;
-import java.io.*;
-import java.util.*;
 
 public class App extends JFrame {
     Calendar calendar;
@@ -23,15 +21,15 @@ public class App extends JFrame {
 
     App() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Digital Clock");
+        this.setTitle("Digital NClock");
         this.setLayout(new FlowLayout());
-        this.setSize(400, 250);
+        this.setSize(500, 200);
+        this.setResizable(false);
         timeF = new SimpleDateFormat("hh:mm:ss a");
-        dayF = new SimpleDateFormat("EEE");
+        dayF = new SimpleDateFormat("EEEE ");
         dateF = new SimpleDateFormat("dd MMM, yyyy");
 
         timeL = new JLabel();
-        timeL.setBackground(Color.BLACK);
         timeL.setForeground(Color.RED);
         timeL.setFont(new Font("Verdana", Font.PLAIN, 64));
 
@@ -60,13 +58,13 @@ public class App extends JFrame {
             date = dateF.format(Calendar.getInstance().getTime());
             dateL.setText(date);
 
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                e.getStackTrace();
+            }
         }
     }
-
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
         new App();
     }
