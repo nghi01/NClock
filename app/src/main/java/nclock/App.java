@@ -12,7 +12,7 @@ import java.util.*;
 public class App extends JFrame {
     Calendar calendar;
     SimpleDateFormat timeF;
-    SimpleDateFormate dayF;
+    SimpleDateFormat dayF;
     SimpleDateFormat dateF;
     JLabel timeL;
     JLabel dayL;
