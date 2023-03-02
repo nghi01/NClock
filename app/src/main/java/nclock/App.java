@@ -46,12 +46,28 @@ public class App extends JFrame {
         this.add(dateL);
         this.setVisible(true);
         
+        setClock();
     }
+
+    public void setClock() {
+        while (true) {
+            time = timeF.format(Calendar.getInstance().getTime());
+            timeL.setText(time);
+
+            day = dayF.format(Calendar.getInstance().getTime());
+            dayL.setText(day);
+
+            date = dateF.format(Calendar.getInstance().getTime());
+            dateL.setText(date);
+
+        }
+    }
+
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        new App();
     }
 }
